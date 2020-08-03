@@ -1,0 +1,17 @@
+server:
+  port: 9999
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: admin
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgresPlusDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  mvc:
+   view:
+      prefix: /WEB-INF/
+      suffix: .jsp
