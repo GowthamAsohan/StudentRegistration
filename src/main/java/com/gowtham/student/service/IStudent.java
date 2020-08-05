@@ -6,11 +6,12 @@ import com.gowtham.student.model.Student;
 
 public interface IStudent {
 	
-	public Integer saveProduct(Student p);
+	public Integer saveStudent(Student p);
 	public List<Student> getAllStudents();
-	public void deleteProduct(Integer id);
+	public void deleteStudent(Integer id);
 	
 	public Student getOneStudent(Integer id);
-	public void updateProduct(Student p);
+	public String updateStudent(Student p);
+	
 
 }

@@ -16,7 +16,52 @@ public class IStudentImplementation implements IStudent {
 	private StudentRepository irepo;
 
 	@Override
-	public Integer saveProduct(Student p) {
+	public Integer saveStudent(Student p) {
+		
+		Double newStuDiscount = 0.10 ;
+		Double oldStuDiscount = 0.20;
+		Double discountFee = 0.0;
+		Double newFee= 0.0;
+		
+		if(p.getIsNewSudent()) {
+			
+			if (p.getDuration() == 2) {
+				
+				discountFee = p.getCourseFee() * newStuDiscount ;
+				p.setDiscount(discountFee);
+				newFee = discountFee + 3000;
+				
+			}else {
+				
+				discountFee = p.getCourseFee() * newStuDiscount ;
+				p.setDiscount(discountFee);
+				newFee = discountFee + 2000;
+				
+			}
+			
+			p.setCourseFee(newFee);
+			
+		}else {
+			
+          if (p.getDuration() == 2) {
+				
+				discountFee = p.getCourseFee() * oldStuDiscount ;
+				p.setDiscount(discountFee);
+				newFee = discountFee + 2000;
+				
+			}else {
+				
+				discountFee = p.getCourseFee() * oldStuDiscount ;
+				p.setDiscount(discountFee);
+				newFee = discountFee + 1000;
+				
+			}
+			
+			p.setCourseFee(newFee);
+			
+			
+		}
+		
 		return irepo.save(p).getStudentId();
 	}
 
@@ -27,7 +72,7 @@ public class IStudentImplementation implements IStudent {
 	}
 
 	@Override
-	public void deleteProduct(Integer id) {
+	public void deleteStudent(Integer id) {
 		
 		irepo.deleteById(id);
 	}
@@ -42,9 +87,53 @@ public class IStudentImplementation implements IStudent {
 	}
 
 	@Override
-	public void updateProduct(Student p) {
+	public String updateStudent(Student p) {
 		
-		irepo.save(p);
+		Double newStuDiscount = 0.10 ;
+		Double oldStuDiscount = 0.20;
+		Double discountFee = 0.0;
+		Double newFee= 0.0;
+		
+		if(p.getIsNewSudent()) {
+			
+			if (p.getDuration() == 2) {
+				
+				discountFee = p.getCourseFee() * newStuDiscount ;
+				p.setDiscount(discountFee);
+				newFee = discountFee + 3000;
+				
+			}else {
+				
+				discountFee = p.getCourseFee() * newStuDiscount ;
+				p.setDiscount(discountFee);
+				newFee = discountFee + 2000;
+				
+			}
+			
+			p.setCourseFee(newFee);
+			
+		}else {
+			
+          if (p.getDuration() == 2) {
+				
+				discountFee = p.getCourseFee() * oldStuDiscount ;
+				p.setDiscount(discountFee);
+				newFee = discountFee + 2000;
+				
+			}else {
+				
+				discountFee = p.getCourseFee() * oldStuDiscount ;
+				p.setDiscount(discountFee);
+				newFee = discountFee + 1000;
+				
+			}
+			
+			p.setCourseFee(newFee);
+			
+			
+		}
+
+		return irepo.save(p).getStudentName();
 		
 	}
 

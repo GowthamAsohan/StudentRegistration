@@ -1,5 +1,8 @@
 server:
   port: 9999
+#  servlet:
+#    context-path: /student
+    
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -9,9 +12,12 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgresPlusDialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: true
-  mvc:
-   view:
-      prefix: /WEB-INF/
-      suffix: .jsp
+  thymeleaf:
+       prefix: classpath:/templates/
+       suffix: .html
+#  mvc:
+#   view:
+#      prefix: /WEB-INF/pages
+#      suffix: .html

@@ -1,6 +1,7 @@
 package com.gowtham.student.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import lombok.Data;
@@ -10,11 +11,14 @@ import lombok.Data;
 public class Student {
 	
 	@Id
+	@GeneratedValue
 	private Integer studentId;
 	private String studentName;
-	private String departmetName;
-	private String courseFee;
-	private String toalCourse;
+	private String courseName;
+	private Integer duration;
+	private Boolean isNewSudent;
+	private Double courseFee;
+	private Double discount;
 	
 
 }
